@@ -1,0 +1,5 @@
+primary: "#4A442A",         // coffee brown
+secondary: "#E8DCC1",       // cream beige
+accent: "#6C8F65",          // nature green
+text: "#2E2E2E",            // charcoal text
+background: "#F9F8F6",      // off‑white

@@ -1,0 +1,121 @@
+﻿/* LakeViewCafeLogo.css */
+.lakeview-logo-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.lakeview-logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  width: var(--logo-size);
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.badge {
+  position: relative;
+  width: 52%;
+  aspect-ratio: 1 / 1;
+  background: #f9c935; /* warm yellow */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 25px rgba(249, 201, 53, 0.35),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.badge:hover {
+  transform: scale(1.06) translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(249, 201, 53, 0.5),
+    inset 0 -8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  width: 64%;
+  height: 64%;
+  color: #1a1a1a;
+  animation: subtle-ripple 8s ease-in-out infinite;
+}
+
+.text-stack {
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.lake-view {
+  font-size: 2.35em;
+  font-weight: 800;
+  line-height: 0.92;
+  margin-bottom: 0.15em;
+  display: flex;
+  gap: 0.12em;
+  justify-content: center;
+}
+
+.lake {
+  color: #5c4033; /* warm brown */
+}
+
+.view {
+  color: #2e7d32; /* forest green */
+}
+
+.cafe {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.12em;
+  opacity: 0.92;
+}
+
+/* Animations — premium subtle feel */
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtle-ripple {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(1.5px) scale(1.015);
+  }
+}
+
+/* Optional: hover interaction on whole logo */
+.lakeview-logo:hover .badge {
+  transform: scale(1.08) translateY(-6px);
+}
+
+.lakeview-logo:hover .text-stack {
+  filter: brightness(1.08);
+}
+
+/* Responsive — smaller on mobile */
+@media (max-width: 500px) {
+  .lakeview-logo {
+    --logo-size: 220px;
+  }
+  .lake-view {
+    font-size: 2em;
+  }
+  .cafe {
+    font-size: 1em;
+  }
+}
