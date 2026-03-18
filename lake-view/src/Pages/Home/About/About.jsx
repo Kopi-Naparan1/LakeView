@@ -1,15 +1,20 @@
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import AboutImage1 from "../../../../../IMAGES/Hero.jpg";
-import AboutImage2 from "../../../../../IMAGES/about_2.jpg";
-import AboutImage3 from "../../../../../IMAGES/about_4.jpg";
-import AboutImage4 from "../../../../../IMAGES/about_3.jpg";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "../../../components/Icons.jsx";
+import AboutImage1 from "../../../assets/images/To_Use/AboutAVIF/sunset.avif";
+import AboutImage2 from "../../../assets/images/To_Use/AboutAVIF/lake-side.avif";
+import AboutImage3 from "../../../assets/images/To_Use/AboutAVIF/resthouse-ai.avif";
+import AboutImage4 from "../../../assets/images/To_Use/AboutAVIF/pavement.avif";
+import AboutImage5 from "../../../assets/images/To_Use/AboutAVIF/inside-cafe.avif";
 
 const aboutImages = [
+  { src: AboutImage1, alt: "Sunsete view from Lake View Café" },
   { src: AboutImage2, alt: "Café seating with a lake backdrop" },
-  { src: AboutImage3, alt: "Inside Lake View Café in the morning" },
-  { src: AboutImage4, alt: "Inside Lake View Café at night" },
-  { src: AboutImage1, alt: "Scenic lake view from Lake View Café" },
+  { src: AboutImage5, alt: "Inside of Lake View Café" },
+  { src: AboutImage3, alt: "Rest house of Lake Apo Nature Park" },
+  { src: AboutImage4, alt: "Pavement for nature walk in Lake Apo" },
 ];
 
 export default function About() {
@@ -67,19 +72,18 @@ export default function About() {
       <div className="flex flex-col-reverse items-center gap-10 site-container md:flex-row md:gap-12">
         {/* Left: Text (60%) */}
         <div className="space-y-6 md:w-3/5">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary/60">
+          {/* <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary/60">
             About Us
-          </span>
+          </span> */}
           <h2 className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
-            Experience Lake View Café
+            Discover Lake Apo Nature Park
           </h2>
-          <p className="text-base leading-relaxed text-primary/80 sm:text-lg md:text-xl">
-            Lake View Café is a modern nature café on the shores of Lake Apo,
-            Valencia City, Bukidnon. Whether you're here to study, work
-            remotely, or simply enjoy a peaceful break, our cozy lakeside
-            setting offers the perfect escape. Sip on specialty coffee, capture
-            Instagram-worthy moments, and unwind surrounded by lush greenery.
-          </p>
+          <ul className="flex flex-col gap-2 ml-5 list-disc">
+            <li>Scenic lake views perfect for sunrise and sunset photos</li>
+            <li>Lakeside café serving local dishes and coffee</li>
+            <li>Comfortable resthouse accommodations for overnight stays</li>
+            <li>Nature walks and eco-tourism experiences</li>
+          </ul>
         </div>
 
         {/* Right: Sliding Carousel (40%) */}
@@ -118,7 +122,7 @@ export default function About() {
               aria-label="Previous photo"
               className="absolute z-10 flex items-center justify-center p-2 transition -translate-y-1/2 border rounded-full shadow-md left-3 top-1/2 border-primary bg-background/80 text-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeftIcon size={20} />
             </button>
             <button
               type="button"
@@ -126,7 +130,7 @@ export default function About() {
               aria-label="Next photo"
               className="absolute z-10 flex items-center justify-center p-2 transition -translate-y-1/2 border rounded-full shadow-md right-3 top-1/2 border-primary bg-background/80 text-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
             >
-              <ChevronRight size={20} />
+              <ChevronRightIcon size={20} />
             </button>
           </div>
 

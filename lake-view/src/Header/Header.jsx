@@ -1,13 +1,14 @@
 ﻿import { Link } from "react-router-dom";
 import { useEffect, useId, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { CloseIcon, MenuIcon } from "../components/Icons.jsx";
 import { LakeViewCafeLogo } from "../assets/BrandLogo.jsx";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Menu", path: "/menu" },
-  { name: "Gallery", path: "/gallery" },
-  { name: "Reservation", path: "/reservation" },
+  { name: "Café", path: "/cafe" },
+  { name: "Resthouse", path: "/resthouse" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export default function Header() {
@@ -38,24 +39,24 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-30 w-full border-b border-primary bg-background shadow-md">
+    <header className="sticky top-0 z-30 w-full border-b shadow-md border-primary bg-background">
       {/* Container */}
-      <div className="site-container flex items-center justify-between py-2">
+      <div className="flex items-center justify-between py-2 site-container">
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center hover:scale-110 transition-transform duration-150 ease-out"
+          className="flex items-center transition-transform duration-150 ease-out hover:scale-110"
         >
           <LakeViewCafeLogo />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 text-text md:flex lg:gap-8">
+        <nav className="items-center hidden gap-6 text-text md:flex lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className="rounded-md p-1 text-sm font-medium lg:text-base hover:bg-secondary transition-colors duration-150 ease-out"
+              className="p-1 text-sm font-medium transition-colors duration-150 ease-out rounded-md lg:text-base hover:bg-secondary"
             >
               {link.name}
             </Link>
@@ -65,13 +66,17 @@ export default function Header() {
         {/* Mobile Toggle */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-text hover:bg-secondary transition-colors duration-150 ease-out md:hidden"
+          className="inline-flex items-center justify-center p-2 transition-colors duration-150 ease-out rounded-md text-text hover:bg-secondary md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           aria-controls={menuId}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? (
+            <CloseIcon size={22} strokeWidth={1.5} />
+          ) : (
+            <MenuIcon size={22} strokeWidth={1.5} />
+          )}
         </button>
       </div>
 
@@ -98,27 +103,27 @@ export default function Header() {
           }`}
         >
           {/* Drawer Header */}
-          <div className="flex items-center justify-between border-b border-secondary px-4 py-4">
-            <span className="font-display text-lg text-text">Menu</span>
+          <div className="flex items-center justify-between px-4 py-4 border-b border-secondary">
+            <span className="text-lg font-display text-text">Menu</span>
 
             <button
               type="button"
               onClick={() => setMenuOpen(false)}
-              className="rounded-md p-2 hover:bg-secondary transition-colors duration-150 ease-out"
+              className="p-2 transition-colors duration-150 ease-out rounded-md hover:bg-secondary"
               aria-label="Close menu"
             >
-              <X size={20} />
+              <CloseIcon size={20} strokeWidth={1.5} />
             </button>
           </div>
 
           {/* Mobile Navigation */}
-          <nav className="mt-2 flex flex-col gap-4 px-4 text-text">
+          <nav className="flex flex-col gap-4 px-4 mt-2 text-text">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
-                className="border-b border-secondary p-2 text-base font-medium rounded-md hover:text-primary hover:bg-secondary transition-colors duration-150 ease-out"
+                className="p-2 text-base font-medium transition-colors duration-150 ease-out border-b rounded-md border-secondary hover:text-primary hover:bg-secondary"
               >
                 {link.name}
               </Link>

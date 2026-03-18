@@ -1,4 +1,4 @@
-﻿import brandLogo from "../../../IMAGES/brandLogo.svg";
+﻿import brandLogo from "../assets/images/To_Use/brandLogo.svg";
 
 export function LakeViewCafeLogo({
   width = 50,

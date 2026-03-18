@@ -12,7 +12,7 @@ export default {
       },
       fontFamily: {
         display: ["Montserrat", "sans-serif"],
-        sans: ["Inter", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

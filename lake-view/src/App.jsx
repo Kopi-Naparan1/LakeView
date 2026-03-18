@@ -3,9 +3,10 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import Home from "./Pages/Home/Home";
-import Menu from "./Pages/Menu/Menu";
-import Gallery from "./Pages/Gallery/Gallery";
-import Reservation from "./Pages/Reservation/Reservation";
+import Cafe from "./Pages/Cafe/Cafe";
+import Resthouse from "./Pages/Resthouse/Resthouse";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <main className="min-h-[calc(100vh-2rem)] bg-background">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/cafe" element={<Cafe />} />
+          <Route path="/resthouse" element={<Resthouse />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </Router>
