@@ -1,14 +1,23 @@
-﻿import { Link } from "react-router-dom";
-import HeroImage from "../../../assets/images/To_Use/Hero.avif";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import AppImage from "../../../components/AppImage";
+import hero640 from "../../../assets/images/optimized/hero/hero-640.jpg";
+import hero1168 from "../../../assets/images/optimized/hero/hero-1168.jpg";
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background Image */}
-      <img
-        src={HeroImage}
-        alt="Lake View Café overlooking Lake Apo in Bukidnon"
-        className="absolute inset-0 object-cover w-full h-full"
+      <AppImage
+        src={hero1168}
+        srcSet={`${hero640} 640w, ${hero1168} 1168w`}
+        sizes="100vw"
+        alt="Lake View Cafe overlooking Lake Apo in Bukidnon"
+        width={1168}
+        height={880}
+        loading="eager"
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-cover"
       />
 
       {/* Overlay */}
@@ -23,30 +32,30 @@ export default function Hero() {
           </p>
 
           <h1 className="font-display font-bold leading-tight text-secondary text-[clamp(1.8rem,5vw,3.5rem)]">
-            Lake Apo Nature Park — Café and Resthouse in Bukidnon
+            Lake Apo Nature Park - Cafe and Resthouse in Bukidnon
           </h1>
 
           <p className="text-sm leading-relaxed sm:text-base md:text-lg text-secondary/80">
             Relax by scenic lake views, enjoy local food, and stay overnight in
-            Bukidnon’s peaceful natural retreat.
+            Bukidnon's peaceful natural retreat.
           </p>
         </div>
 
         <div className="flex flex-col gap-3 mt-6 sm:mt-8 sm:flex-row sm:gap-4">
           {/* PRIMARY CTA */}
-          <Link
-            to="/directions"
+          <HashLink
+            to="/contact#contact-map"
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-primary shadow-md transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-secondary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
             Get Directions
-          </Link>
+          </HashLink>
 
           {/* SECONDARY CTA */}
           <Link
-            to="/menu"
+            to="/cafe"
             className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold transition-colors duration-150 ease-out border rounded-lg sm:w-auto border-secondary/70 text-secondary backdrop-blur-sm hover:border-secondary hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
-            Explore Café
+            Explore Cafe
           </Link>
 
           {/* TERTIARY CTA */}

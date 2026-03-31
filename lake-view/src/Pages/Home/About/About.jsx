@@ -3,6 +3,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "../../../components/Icons.jsx";
+import AppImage from "../../../components/AppImage";
 import AboutImage1 from "../../../assets/images/To_Use/AboutAVIF/sunset.avif";
 import AboutImage2 from "../../../assets/images/To_Use/AboutAVIF/lake-side.avif";
 import AboutImage3 from "../../../assets/images/To_Use/AboutAVIF/resthouse-ai.avif";
@@ -78,7 +79,7 @@ export default function About() {
           <h2 className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
             Discover Lake Apo Nature Park
           </h2>
-          <ul className="flex flex-col gap-2 ml-5 list-disc">
+          <ul className="flex flex-col gap-2 ml-5 list-disc text-primary/80">
             <li>Scenic lake views perfect for sunrise and sunset photos</li>
             <li>Lakeside café serving local dishes and coffee</li>
             <li>Comfortable resthouse accommodations for overnight stays</li>
@@ -106,11 +107,10 @@ export default function About() {
             >
               {aboutImages.map((image) => (
                 <div key={image.src} className="flex-shrink-0 w-full h-full">
-                  <img
+                  <AppImage
                     src={image.src}
                     alt={image.alt}
                     className="object-cover w-full h-full"
-                    loading="lazy"
                   />
                 </div>
               ))}

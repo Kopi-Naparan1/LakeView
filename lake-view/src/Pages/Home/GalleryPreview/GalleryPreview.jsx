@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
-import image1 from "../../../assets/images/To_Use/GalleryAVIF/food1.avif";
-import image2 from "../../../assets/images/To_Use/GalleryAVIF/food2.avif";
-import image3 from "../../../assets/images/To_Use/GalleryAVIF/food3.avif";
-import image4 from "../../../assets/images/To_Use/GalleryAVIF/food4.avif";
-import image5 from "../../../assets/images/To_Use/GalleryAVIF/food5.avif";
-import image6 from "../../../assets/images/To_Use/GalleryAVIF/food6.avif";
+import image1 from "./galleryImage/image1.avif";
+import image2 from "./galleryImage/image2.avif";
+import image3 from "./galleryImage/image3.avif";
+import image4 from "./galleryImage/image4.avif";
+import image5 from "./galleryImage/image5.avif";
+import image6 from "./galleryImage/image6.avif";
+import { Heart } from "lucide-react";
+import AppImage from "../../../components/AppImage";
 
 const galleryItems = [
   { image: image1, name: "@lakelife_view", likes: 1240 },
@@ -24,7 +25,7 @@ export default function GalleryPreview() {
           <h2 className="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl text-primary">
             Experience the View
           </h2>
-          <p className="text-sm leading-relaxed sm:text-base md:text-lg text-primary/75">
+          <p className="text-sm leading-relaxed sm:text-base md:text-lg text-primary/80">
             See stunning Lake Apo scenery, café ambiance, and resthouse
             accommodations in Bukidnon.
           </p>
@@ -39,22 +40,22 @@ export default function GalleryPreview() {
             >
               {/* IMAGE */}
               <div className="overflow-hidden">
-                <img
+                <AppImage
                   src={item.image}
                   alt={item.name}
-                  loading="lazy"
                   className="w-full aspect-[4/3] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
 
               {/* CONTENT */}
-              <div className="flex items-center justify-between p-4 sm:p-5">
+              <div className="flex flex-col justify-start p-4 sm:p-5">
                 <h3 className="text-sm font-semibold sm:text-base text-primary">
                   {item.name}
                 </h3>
 
-                <span className="text-xs font-medium sm:text-sm text-primary/60">
-                  {item.likes.toLocaleString()} likes
+                <span className="flex flex-row items-center gap-1 text-xs font-medium sm:text-sm text-primary/70">
+                  <Heart className="w-4 h-4" />
+                  {item.likes.toLocaleString()}
                 </span>
               </div>
             </div>

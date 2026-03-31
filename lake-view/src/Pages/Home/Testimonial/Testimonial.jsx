@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import AppImage from "../../../components/AppImage";
 
 import image1 from "../../../assets/images/To_Use/TestimonialAVIF/profile1.avif";
 import image2 from "../../../assets/images/To_Use/TestimonialAVIF/profile2.avif";
@@ -43,7 +44,7 @@ export default function Testimonial() {
           <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-primary">
             What Visitors Are Saying
           </h2>
-          <p className="text-sm sm:text-base text-primary/70">
+          <p className="text-sm sm:text-base text-primary/80">
             Real experiences from guests who visited Lake Apo Café and
             Resthouse.
           </p>
@@ -58,7 +59,7 @@ export default function Testimonial() {
             >
               {/* USER HEADER */}
               <div className="flex items-center gap-3 mb-4">
-                <img
+                <AppImage
                   src={item.picture}
                   alt={item.name}
                   className="object-cover w-10 h-10 rounded-full"
@@ -68,12 +69,16 @@ export default function Testimonial() {
                   <p className="text-sm font-semibold text-primary">
                     {item.name}
                   </p>
-                  <p className="text-xs text-primary/60">{item.role}</p>
+                  <p className="text-xs text-primary/70">{item.role}</p>
                 </div>
               </div>
 
+              {/* QUOTE */}
+              <p className="text-sm leading-relaxed sm:text-base text-primary/80">
+                “{item.quote}”
+              </p>
               {/* RATING */}
-              <div className="flex gap-1 mb-3">
+              <div className="flex gap-1 mt-3">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -86,11 +91,6 @@ export default function Testimonial() {
                   />
                 ))}
               </div>
-
-              {/* QUOTE */}
-              <p className="text-sm leading-relaxed sm:text-base text-primary/80">
-                “{item.quote}”
-              </p>
             </div>
           ))}
         </div>

@@ -1,13 +1,14 @@
-﻿import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useId, useRef, useState } from "react";
 import { CloseIcon, MenuIcon } from "../components/Icons.jsx";
-import { LakeViewCafeLogo } from "../assets/BrandLogo.jsx";
+import LakeViewCafeLogo from "../assets/images/To_Use/LAKE-APO-LOGO.avif";
+import { preloadRoute } from "../pages";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Café", path: "/cafe" },
+  { name: "Café ", path: "/cafe" },
   { name: "Resthouse", path: "/resthouse" },
-  { name: "About", path: "/about" },
+
   { name: "Contact", path: "/contact" },
 ];
 
@@ -15,6 +16,11 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuId = useId();
   const panelRef = useRef(null);
+  const location = useLocation();
+
+  function handleLinkIntent(path) {
+    void preloadRoute(path);
+  }
 
   useEffect(() => {
     function onKeyDown(e) {
@@ -38,6 +44,35 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!location.hash) {
+      // Force each route change to start at the top (hero) instead of preserving scroll.
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    if (!targetId) return;
+
+    let attempts = 0;
+    const maxAttempts = 12;
+
+    function scrollToHash() {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < maxAttempts) {
+        requestAnimationFrame(scrollToHash);
+      }
+    }
+
+    scrollToHash();
+  }, [location.pathname, location.hash]);
+
   return (
     <header className="sticky top-0 z-30 w-full border-b shadow-md border-primary bg-background">
       {/* Container */}
@@ -46,8 +81,15 @@ export default function Header() {
         <Link
           to="/"
           className="flex items-center transition-transform duration-150 ease-out hover:scale-110"
+          onMouseEnter={() => handleLinkIntent("/")}
+          onFocus={() => handleLinkIntent("/")}
+          onTouchStart={() => handleLinkIntent("/")}
         >
-          <LakeViewCafeLogo />
+          <img
+            src={LakeViewCafeLogo}
+            alt="Lake View Cafe Logo"
+            className="h-auto w-9"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -56,7 +98,14 @@ export default function Header() {
             <Link
               key={link.path}
               to={link.path}
-              className="p-1 text-sm font-medium transition-colors duration-150 ease-out rounded-md lg:text-base hover:bg-secondary"
+              onMouseEnter={() => handleLinkIntent(link.path)}
+              onFocus={() => handleLinkIntent(link.path)}
+              onTouchStart={() => handleLinkIntent(link.path)}
+              className={`${
+                location.pathname === link.path
+                  ? "bg-secondary"
+                  : "hover:bg-secondary/40"
+              } p-1 text-sm font-medium transition-colors duration-150 ease-out rounded-md lg:text-base`}
             >
               {link.name}
             </Link>
@@ -123,6 +172,9 @@ export default function Header() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
+                onMouseEnter={() => handleLinkIntent(link.path)}
+                onFocus={() => handleLinkIntent(link.path)}
+                onTouchStart={() => handleLinkIntent(link.path)}
                 className="p-2 text-base font-medium transition-colors duration-150 ease-out border-b rounded-md border-secondary hover:text-primary hover:bg-secondary"
               >
                 {link.name}

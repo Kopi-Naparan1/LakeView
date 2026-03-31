@@ -1,5 +1,6 @@
 import image1 from "../../../assets/images/To_Use/ServicesAVIF/lake-view-cafe.avif";
 import image2 from "../../../assets/images/To_Use/ServicesAVIF/resthouse-close.avif";
+import AppImage from "../../../components/AppImage";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -32,7 +33,7 @@ export default function Services() {
           <h2 className="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl text-primary">
             Explore What You Can Experience
           </h2>
-          <p className="text-sm leading-relaxed sm:text-base md:text-lg text-primary/75">
+          <p className="text-sm leading-relaxed sm:text-base md:text-lg text-primary/80">
             Choose between lakeside dining or a relaxing overnight stay at Lake
             Apo.
           </p>
@@ -47,10 +48,9 @@ export default function Services() {
             >
               {/* IMAGE */}
               <div className="overflow-hidden">
-                <img
+                <AppImage
                   src={service.image}
                   alt={service.service}
-                  loading="lazy"
                   className="w-full aspect-[4/3] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
@@ -61,7 +61,7 @@ export default function Services() {
                   {service.service}
                 </h3>
 
-                <p className="text-sm leading-relaxed sm:text-base text-primary/70">
+                <p className="text-sm leading-relaxed sm:text-base text-primary/80">
                   {service.description}
                 </p>
 

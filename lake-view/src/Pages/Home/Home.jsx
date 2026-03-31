@@ -4,7 +4,7 @@ import Services from "./Services/Services";
 import GalleryPreview from "./GalleryPreview/GalleryPreview";
 import Testimonial from "./Testimonial/Testimonial";
 import FinalCTA from "./FinalCTA/FinalCTA";
-
+import ParkGuidelines from "./GuideLines/GuideLines";
 export default function Home() {
   return (
     <div className="min-h-full">
@@ -12,6 +12,7 @@ export default function Home() {
       <About />
       <Services />
       <GalleryPreview />
+      <ParkGuidelines />
       <Testimonial />
       <FinalCTA />
     </div>
