@@ -13,6 +13,17 @@
 @layer base {
   html {
     font-family: "Montserrat", sans-serif;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    background-color: #f9f8f6;
+  }
+
+  #root {
+    min-height: 100%;
   }
 }
 
