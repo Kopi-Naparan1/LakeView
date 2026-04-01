@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import { Star, MapPin, Clock } from "lucide-react";
 
 const trustItems = [
@@ -26,13 +27,13 @@ export default function TrustStrip() {
     <section className="w-full border-y border-secondary bg-background">
       <div className="max-w-6xl px-4 py-6 mx-auto">
         <div className="grid gap-4 text-primary sm:grid-cols-3">
-          {trustItems.map(({ title, detail, icon: Icon, tone }) => (
+          {trustItems.map(({ title, detail, icon, tone }) => (
             <div
               key={title}
               className="flex items-start gap-3 p-4 border shadow-sm rounded-xl border-secondary/70 bg-white/70"
             >
               <span className="flex items-center justify-center rounded-full text-primary h-9 w-9 bg-secondary/70">
-                <Icon loading="lazy" className={`h-4 w-4 ${tone}`} />
+                {createElement(icon, { className: `h-4 w-4 ${tone}` })}
               </span>
               <div>
                 <p className="text-sm font-semibold text-primary">{title}</p>

@@ -1,14 +1,9 @@
 import "./App.css";
 
-import { Suspense, useEffect, useState } from "react";
+import { createElement, Suspense, useEffect, useState } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import Header from "./Header/Header";
-import {
-  pageRoutes,
-  preloadRoute,
-  resolveRoutePath,
-  routePaths,
-} from "./pages";
+import { pageRoutes, resolveRoutePath } from "./pages";
 
 function RouteFallback() {
   return (
@@ -26,68 +21,47 @@ function AppShell() {
   const [mountedPaths, setMountedPaths] = useState(() =>
     activePath ? [activePath] : [],
   );
+  const renderedPaths =
+    activePath && !mountedPaths.includes(activePath)
+      ? [...mountedPaths, activePath]
+      : mountedPaths;
 
   useEffect(() => {
-    if (!activePath) return;
-
-    setMountedPaths((prevPaths) =>
-      prevPaths.includes(activePath) ? prevPaths : [...prevPaths, activePath],
-    );
-  }, [activePath]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return undefined;
-
-    const pathsToWarm = routePaths.filter((path) => path !== activePath);
-    if (!pathsToWarm.length) return undefined;
+    if (!activePath || mountedPaths.includes(activePath)) return undefined;
 
     let cancelled = false;
 
-    function warmRoutes() {
+    queueMicrotask(() => {
       if (cancelled) return;
 
-      pathsToWarm.forEach((path) => {
-        void preloadRoute(path);
-      });
-    }
-
-    if ("requestIdleCallback" in window) {
-      const idleCallbackId = window.requestIdleCallback(warmRoutes, {
-        timeout: 1500,
-      });
-
-      return () => {
-        cancelled = true;
-        window.cancelIdleCallback(idleCallbackId);
-      };
-    }
-
-    const timeoutId = window.setTimeout(warmRoutes, 250);
+      setMountedPaths((prevPaths) =>
+        prevPaths.includes(activePath) ? prevPaths : [...prevPaths, activePath],
+      );
+    });
 
     return () => {
       cancelled = true;
-      window.clearTimeout(timeoutId);
     };
-  }, [activePath]);
+  }, [activePath, mountedPaths]);
 
   return (
     <>
       <Header />
       <main className="min-h-[calc(100vh-2rem)] bg-background">
-        {pageRoutes.map(({ path, Component }) => {
-          if (!mountedPaths.includes(path)) return null;
+        {pageRoutes.map((route) => {
+          if (!renderedPaths.includes(route.path)) return null;
 
-          const isActive = path === activePath;
+          const isActive = route.path === activePath;
 
           return (
             <section
-              key={path}
+              key={route.path}
               hidden={!isActive}
               aria-hidden={!isActive}
               className={isActive ? "block" : "hidden"}
             >
               <Suspense fallback={isActive ? <RouteFallback /> : null}>
-                <Component />
+                {createElement(route.Component)}
               </Suspense>
             </section>
           );

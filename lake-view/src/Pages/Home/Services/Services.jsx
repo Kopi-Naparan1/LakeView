@@ -2,6 +2,7 @@ import image1 from "../../../assets/images/To_Use/ServicesAVIF/lake-view-cafe.av
 import image2 from "../../../assets/images/To_Use/ServicesAVIF/resthouse-close.avif";
 import AppImage from "../../../components/AppImage";
 import { Link } from "react-router-dom";
+import { preloadRoute } from "../../../pages";
 
 const services = [
   {
@@ -25,6 +26,10 @@ const services = [
 ];
 
 export default function Services() {
+  function handleLinkIntent(path) {
+    void preloadRoute(path);
+  }
+
   return (
     <section className="w-full py-16 bg-background sm:py-20 lg:py-28">
       <div className="flex flex-col gap-10 site-container">
@@ -69,6 +74,9 @@ export default function Services() {
                 <div className="pt-4 mt-auto">
                   <Link
                     to={service.to}
+                    onMouseEnter={() => handleLinkIntent(service.to)}
+                    onFocus={() => handleLinkIntent(service.to)}
+                    onTouchStart={() => handleLinkIntent(service.to)}
                     className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-secondary transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
                     {service.cta}

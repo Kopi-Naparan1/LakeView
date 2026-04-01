@@ -3,8 +3,13 @@ import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
 import hero640 from "../../../assets/images/optimized/hero/hero-640.jpg";
 import hero1168 from "../../../assets/images/optimized/hero/hero-1168.jpg";
+import { preloadRoute } from "../../../pages";
 
 export default function Hero() {
+  function handleLinkIntent(path) {
+    void preloadRoute(path);
+  }
+
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background Image */}
@@ -45,6 +50,9 @@ export default function Hero() {
           {/* PRIMARY CTA */}
           <HashLink
             to="/contact#contact-map"
+            onMouseEnter={() => handleLinkIntent("/contact")}
+            onFocus={() => handleLinkIntent("/contact")}
+            onTouchStart={() => handleLinkIntent("/contact")}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-primary shadow-md transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-secondary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
             Get Directions
@@ -53,6 +61,9 @@ export default function Hero() {
           {/* SECONDARY CTA */}
           <Link
             to="/cafe"
+            onMouseEnter={() => handleLinkIntent("/cafe")}
+            onFocus={() => handleLinkIntent("/cafe")}
+            onTouchStart={() => handleLinkIntent("/cafe")}
             className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold transition-colors duration-150 ease-out border rounded-lg sm:w-auto border-secondary/70 text-secondary backdrop-blur-sm hover:border-secondary hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
             Explore Cafe
@@ -61,6 +72,9 @@ export default function Hero() {
           {/* TERTIARY CTA */}
           <Link
             to="/resthouse"
+            onMouseEnter={() => handleLinkIntent("/resthouse")}
+            onFocus={() => handleLinkIntent("/resthouse")}
+            onTouchStart={() => handleLinkIntent("/resthouse")}
             className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold underline transition-colors duration-150 ease-out sm:w-auto text-secondary/80 underline-offset-4 hover:text-secondary hover:underline"
           >
             View Resthouse

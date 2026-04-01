@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "../../../components/Icons.jsx";
-import AppImage from "../../../components/AppImage";
-import AboutImage1 from "../../../assets/images/To_Use/AboutAVIF/sunset.avif";
-import AboutImage2 from "../../../assets/images/To_Use/AboutAVIF/lake-side.avif";
-import AboutImage3 from "../../../assets/images/To_Use/AboutAVIF/resthouse-ai.avif";
-import AboutImage4 from "../../../assets/images/To_Use/AboutAVIF/pavement.avif";
-import AboutImage5 from "../../../assets/images/To_Use/AboutAVIF/inside-cafe.avif";
+} from "../../../../components/Icons.jsx";
+import AppImage from "../../../../components/AppImage.jsx";
+import AboutImage1 from "../AboutImage/sunset.avif";
+import AboutImage2 from "../AboutImage/lake-side.avif";
+import AboutImage3 from "../AboutImage/resthouse-ai.avif";
+import AboutImage4 from "../AboutImage/pavement.avif";
+import AboutImage5 from "../AboutImage/inside-cafe.avif";
 
 const aboutImages = [
   { src: AboutImage1, alt: "Sunsete view from Lake View Café" },
