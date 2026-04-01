@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
-import HeroImage from "../../../assets/images/To_Use/ResthousePage/resthouse-hero.avif";
+import HeroImage from "../ResthouseAssets/resthouse-hero.avif";
 
 export default function ResthouseHero({ RoomsSectionRef }) {
   function scrollToRoom() {
@@ -23,7 +23,7 @@ export default function ResthouseHero({ RoomsSectionRef }) {
         alt="Lake View Cafe overlooking Lake Apo in Bukidnon"
         loading="eager"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full"
       />
 
       {/* Overlay */}

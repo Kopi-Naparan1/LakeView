@@ -1,9 +1,9 @@
 import { Star } from "lucide-react";
 import AppImage from "../../../components/AppImage";
 
-import image1 from "../../../assets/images/To_Use/TestimonialAVIF/profile1.avif";
-import image2 from "../../../assets/images/To_Use/TestimonialAVIF/profile2.avif";
-import image3 from "../../../assets/images/To_Use/TestimonialAVIF/profile3.avif";
+import image1 from "./profile1.avif";
+import image2 from "./profile2.avif";
+import image3 from "./profile3.avif";
 
 const testimonials = [
   {

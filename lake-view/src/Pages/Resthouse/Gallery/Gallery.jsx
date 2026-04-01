@@ -1,7 +1,7 @@
-import Image1 from "../../../assets/images/To_Use/ResthousePage/archive/gallery-1.avif";
-import Image2 from "../../../assets/images/To_Use/ResthousePage/archive/gallery-2.avif";
-import Image3 from "../../../assets/images/To_Use/ResthousePage/archive/gallery-3.avif";
-import Image4 from "../../../assets/images/To_Use/ResthousePage/archive/gallery-4.avif";
+import Image1 from "../ResthouseAssets/gallery-1.avif";
+import Image2 from "../ResthouseAssets/gallery-2.avif";
+import Image3 from "../ResthouseAssets/gallery-3.avif";
+import Image4 from "../ResthouseAssets/gallery-4.avif";
 import AppImage from "../../../components/AppImage";
 
 const galleryImages = [

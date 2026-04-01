@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
-import hero640 from "../../../assets/images/optimized/hero/hero-640.jpg";
-import hero1168 from "../../../assets/images/optimized/hero/hero-1168.jpg";
+import hero640 from "./hero-640.jpg";
+import hero1168 from "./hero-1168.jpg";
 import { preloadRoute } from "../../../pages";
 
 export default function Hero() {
@@ -22,7 +22,7 @@ export default function Hero() {
         height={880}
         loading="eager"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full"
       />
 
       {/* Overlay */}

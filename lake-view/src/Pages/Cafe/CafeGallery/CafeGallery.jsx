@@ -1,11 +1,11 @@
 import { Heart } from "lucide-react";
 import AppImage from "../../../components/AppImage";
-import image1 from "../../../assets/images/To_Use/GalleryAVIF/food1.avif";
-import image2 from "../../../assets/images/To_Use/GalleryAVIF/food2.avif";
-import image3 from "../../../assets/images/To_Use/GalleryAVIF/food3.avif";
-import image4 from "../../../assets/images/To_Use/GalleryAVIF/food4.avif";
-import image5 from "../../../assets/images/To_Use/GalleryAVIF/food5.avif";
-import image6 from "../../../assets/images/To_Use/GalleryAVIF/food6.avif";
+import image1 from "../CafeAssets/food1.avif";
+import image2 from "../CafeAssets/food2.avif";
+import image3 from "../CafeAssets/food3.avif";
+import image4 from "../CafeAssets/food4.avif";
+import image5 from "../CafeAssets/food5.avif";
+import image6 from "../CafeAssets/food6.avif";
 
 const galleryItems = [
   { image: image1, name: "@lakelife_view", likes: 1240 },

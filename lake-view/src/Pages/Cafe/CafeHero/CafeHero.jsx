@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
-import HeroImage from "../../../assets/images/To_Use/CafePage/Cafe_Hero.avif";
+import HeroImage from "../CafeAssets/Cafe-Hero.avif";
 
 export default function CafeHero({ CafeMenuSectionRef }) {
   return (

@@ -1,8 +1,8 @@
 import { Bed, ShowerHead, Mountain } from "lucide-react";
 import AppImage from "../../../components/AppImage";
-import Comfortable from "../../../assets/images/To_Use/ResthousePage/archive/comfortable.avif";
-import Necessities from "../../../assets/images/To_Use/ResthousePage/archive/necessities.avif";
-import Nature from "../../../assets/images/To_Use/ResthousePage/archive/nature.avif";
+import Comfortable from "../ResthouseAssets/comfortable.avif";
+import Necessities from "../ResthouseAssets/necessities.avif";
+import Nature from "../ResthouseAssets/nature.avif";
 const amenities = [
   {
     icon: Bed,

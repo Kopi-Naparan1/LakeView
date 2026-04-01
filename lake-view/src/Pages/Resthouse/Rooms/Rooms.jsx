@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AppImage from "../../../components/AppImage";
-import FamilyRoomImage from "../../../assets/images/To_Use/ResthousePage/family-room.avif";
-import BasicRoomImage from "../../../assets/images/To_Use/ResthousePage/basic-house.avif";
+import FamilyRoomImage from "../ResthouseAssets/family-room.avif";
+import BasicRoomImage from "../ResthouseAssets/basic-house.avif";
 const rooms = [
   {
     id: "room1",

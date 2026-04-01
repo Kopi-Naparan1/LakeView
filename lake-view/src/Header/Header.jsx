@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useId, useRef, useState } from "react";
 import { CloseIcon, MenuIcon } from "../components/Icons.jsx";
-import LakeViewCafeLogo from "../assets/images/To_Use/LAKE-APO-LOGO.avif";
+import LakeViewCafeLogo from "./LAKE-APO-LOGO.avif";
 import { preloadRoute } from "../pages";
 
 const navLinks = [

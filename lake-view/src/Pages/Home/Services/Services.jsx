@@ -1,5 +1,6 @@
-import image1 from "../../../assets/images/To_Use/ServicesAVIF/lake-view-cafe.avif";
-import image2 from "../../../assets/images/To_Use/ServicesAVIF/resthouse-close.avif";
+import image1 from "../HomeAssets/lake-view-cafe.avif";
+
+import image2 from "../HomeAssets/resthouse-close.avif";
 import AppImage from "../../../components/AppImage";
 import { Link } from "react-router-dom";
 import { preloadRoute } from "../../../pages";

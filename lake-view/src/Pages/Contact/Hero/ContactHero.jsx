@@ -1,5 +1,5 @@
 import AppImage from "../../../components/AppImage";
-import HeroImage from "../../../assets/images/To_Use/ResthousePage/resthouse-hero.avif";
+import HeroImage from "./reception.avif";
 
 export default function ContactHero({
   ContactFAQSectionRef,
@@ -13,7 +13,7 @@ export default function ContactHero({
         alt="Lake View Cafe overlooking Lake Apo in Bukidnon"
         loading="eager"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full"
       />
 
       {/* Overlay */}

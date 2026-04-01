@@ -5,10 +5,10 @@ import {
 } from "../../../components/Icons.jsx";
 import AppImage from "../../../components/AppImage";
 
-import AboutImage1 from "../../../assets/images/To_Use/CafePage/about1.avif";
-import AboutImage2 from "../../../assets/images/To_Use/CafePage/about2.avif";
-import AboutImage3 from "../../../assets/images/To_Use/CafePage/about3.avif";
-import AboutImage4 from "../../../assets/images/To_Use/CafePage/about4.avif";
+import AboutImage1 from "../CafeAssets/about1.avif";
+import AboutImage2 from "../CafeAssets/about2.avif";
+import AboutImage3 from "../CafeAssets/about3.avif";
+import AboutImage4 from "../CafeAssets/about4.avif";
 
 const aboutImages = [
   { src: AboutImage1, alt: "Lake View Café Inside Image at Morning" },
