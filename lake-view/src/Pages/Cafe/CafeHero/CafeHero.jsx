@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
-import HeroImage from "../../../assets/images/To_Use/CafePage/cafe-hero.avif";
+import HeroImage from "../../../assets/images/To_Use/CafePage/Cafe_Hero.avif";
 
 export default function CafeHero({ CafeMenuSectionRef }) {
   return (
@@ -11,7 +11,7 @@ export default function CafeHero({ CafeMenuSectionRef }) {
         alt="Lake View Cafe overlooking Lake Apo in Bukidnon"
         loading="eager"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full"
       />
 
       {/* Overlay */}
