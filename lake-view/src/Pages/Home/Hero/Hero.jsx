@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center min-h-[80svh] lg:min-h-screen site-container py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 flex flex-col justify-center min-h-[68svh] sm:min-h-[80svh] lg:min-h-screen site-container py-8 sm:py-16 lg:py-20">
         {/* TEXT BLOCK */}
         <div className="max-w-2xl space-y-4 sm:space-y-6">
           <p className="text-xs font-semibold tracking-widest uppercase sm:text-sm text-secondary/80">

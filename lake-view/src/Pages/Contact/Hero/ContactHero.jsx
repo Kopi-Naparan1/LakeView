@@ -20,7 +20,7 @@ export default function ContactHero({
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/65 to-black/85" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center min-h-[80svh] lg:min-h-screen site-container py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 flex flex-col justify-center min-h-[68svh] sm:min-h-[80svh] lg:min-h-screen site-container py-8 sm:py-16 lg:py-20">
         {/* TEXT BLOCK */}
         <div className="max-w-2xl space-y-4 sm:space-y-6">
           <h1 className="font-display font-bold leading-tight text-secondary text-[clamp(1.8rem,5vw,3.5rem)]">
