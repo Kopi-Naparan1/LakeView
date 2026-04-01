@@ -88,7 +88,7 @@ export default function Header() {
           <img
             src={LakeViewCafeLogo}
             alt="Lake View Cafe Logo"
-            className="h-auto w-9"
+            className="w-10 h-auto"
           />
         </Link>
 
