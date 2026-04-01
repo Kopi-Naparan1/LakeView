@@ -4,6 +4,7 @@ import image2 from "../HomeAssets/resthouse-close.avif";
 import AppImage from "../../../components/AppImage";
 import { Link } from "react-router-dom";
 import { preloadRoute } from "../../../pages";
+import { HashLink } from "react-router-hash-link";
 
 const services = [
   {
@@ -13,7 +14,7 @@ const services = [
     description:
       "Enjoy freshly prepared meals and drinks while overlooking the lake.",
     cta: "View Menu",
-    to: "/cafe",
+    to: "/cafe#cafe-menu",
   },
   {
     key: "resthouse-service-card",
@@ -21,8 +22,8 @@ const services = [
     service: "Lake View Resthouse",
     description:
       "Stay in comfortable rooms surrounded by nature and fresh mountain air.",
-    cta: "Check Availability",
-    to: "/resthouse",
+    cta: "Check Rooms",
+    to: "/resthouse#resthouse-rooms",
   },
 ];
 
@@ -73,7 +74,7 @@ export default function Services() {
 
                 {/* CTA pushed to bottom */}
                 <div className="pt-4 mt-auto">
-                  <Link
+                  <HashLink
                     to={service.to}
                     onMouseEnter={() => handleLinkIntent(service.to)}
                     onFocus={() => handleLinkIntent(service.to)}
@@ -81,7 +82,7 @@ export default function Services() {
                     className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-secondary transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
                     {service.cta}
-                  </Link>
+                  </HashLink>
                 </div>
               </div>
             </div>

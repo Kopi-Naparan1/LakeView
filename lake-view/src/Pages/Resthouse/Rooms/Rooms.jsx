@@ -42,6 +42,7 @@ export default function Services({
     <section
       ref={RoomsSectionRef}
       className="w-full py-16 sm:py-20 lg:py-28 bg-background"
+      id="resthouse-rooms"
     >
       <div className="flex flex-col gap-10 site-container">
         {/* HEADER */}
