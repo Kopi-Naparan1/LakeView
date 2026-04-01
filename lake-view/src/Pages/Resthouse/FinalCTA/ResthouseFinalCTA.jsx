@@ -28,12 +28,13 @@ export default function FinalResthouseCTA({ RoomsSectionRef }) {
         {/* CTA BUTTONS */}
         <div className="flex flex-col gap-3 mt-6 sm:flex-row sm:gap-4 sm:mt-8">
           {/* PRIMARY CTA */}
-          <Link
+          <button
+            type="button"
             onClick={() => handleClickToRoom()}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-primary shadow-md border-2 border-primary/70 transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-secondary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
             Book Now
-          </Link>
+          </button>
 
           {/* SECONDARY CTA */}
           <Link

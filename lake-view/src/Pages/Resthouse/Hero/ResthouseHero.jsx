@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import AppImage from "../../../components/AppImage";
 import HeroImage from "../ResthouseAssets/resthouse-hero.avif";
@@ -45,12 +44,13 @@ export default function ResthouseHero({ RoomsSectionRef }) {
 
         <div className="flex flex-col gap-3 mt-6 sm:mt-8 sm:flex-row sm:gap-4">
           {/* PRIMARY CTA */}
-          <Link
+          <button
+            type="button"
             onClick={() => handleClickToRoom()}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-primary shadow-md transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-secondary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/80"
           >
             Choose a Room
-          </Link>
+          </button>
 
           {/* SECONDARY CTA */}
           <HashLink

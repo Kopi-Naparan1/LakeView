@@ -2,6 +2,7 @@ export default function BookingSection({ bookingSectionRef, room, setRoom }) {
   return (
     <section
       ref={bookingSectionRef}
+      id="resthouse-booking"
       className="w-full py-16 bg-background sm:py-20 lg:py-28"
     >
       <div className="max-w-3xl px-4 mx-auto">

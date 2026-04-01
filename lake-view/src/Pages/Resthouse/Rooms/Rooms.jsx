@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import AppImage from "../../../components/AppImage";
 import FamilyRoomImage from "../ResthouseAssets/family-room.avif";
 import BasicRoomImage from "../ResthouseAssets/basic-house.avif";
@@ -85,12 +84,13 @@ export default function Services({
 
                 {/* CTA */}
                 <div className="flex flex-col gap-2 mt-auto sm:flex-row sm:justify-start">
-                  <Link
+                  <button
+                    type="button"
                     onClick={() => handleBookingRoomType(room.title)}
                     className=" group-hover/cta:bg-primary w-full sm:w-auto inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-secondary bg-primary rounded-lg transition-transform duration-150 hover:-translate-y-0.5 hover:bg-primary/90"
                   >
                     {room.ctaPrimary}
-                  </Link>
+                  </button>
 
                   {/* <Link
                     to={room.moreDetailLink}
